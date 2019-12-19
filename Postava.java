@@ -1,15 +1,12 @@
 package hra;
 
-public class Postava {
+public class Hrac {
     private String meno;
     private int body;
 
-    public Postava(String paMeno, int paBody) {
+    public Hrac(String paMeno) {
         this.meno = paMeno;
-        this.body = paBody;
-    }
-
-    public void pridelBody(){
+        this.body = 0;
     }
 
     public String getMeno() {
@@ -24,7 +21,7 @@ public class Postava {
         return body;
     }
 
-    public void setBody(int body) {
-        this.body = body;
+    public void setBody(int paBody) {
+        this.body = this.body + paBody;
     }  
 }
