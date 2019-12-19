@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Karty {
 
-   public final Karty[] karty = new Karty[40];
+   public final Karty[] karty = new Karty[41];
     
     private ImageIcon obrazok;
     private int idPexesa;
