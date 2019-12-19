@@ -1,18 +1,23 @@
 package hraciaPlocha;
 import hra.Pexeso;
-import hra.Postava;
+import hra.Hrac;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
 public class Menu extends javax.swing.JFrame {
+    
+Hrac []hraci = new Hrac[2];
+
+
 
     public Menu() {
+ 
         this.initComponents();
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         menuBar1 = new java.awt.MenuBar();
@@ -152,36 +157,37 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
             this.spusti();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
  try {
         File myFile = new File("src/hraciaPlocha/stav.txt");
         Desktop.getDesktop().open(myFile);
     } catch (IOException ex) {
         
     }        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
  
 
     public void spusti() {
 
 String menoHraca1 = jTextArea1.getText();
 String menoHraca2 = jTextArea2.getText();
-Postava postava1 = new Postava(menoHraca1,0);
-Postava postava2 = new Postava(menoHraca2,0);
 
-        Pexeso pexeso = new Pexeso(postava1, postava2);
+       hraci[0] = new Hrac("");
+        hraci[1] = new Hrac("");
+
+        Pexeso pexeso = new Pexeso(hraci);
    }
 
      
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -199,5 +205,5 @@ Postava postava2 = new Postava(menoHraca2,0);
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
