@@ -1,7 +1,7 @@
 package hraciaPlocha;
 import java.awt.GridBagLayout;
 import javax.swing.BorderFactory;
-import hra.Postava;
+import hra.Hrac;
 import java.awt.BorderLayout;
  
 import java.awt.GridLayout;
@@ -20,10 +20,13 @@ public class Panel extends JFrame {
     public final JLabel stred = new JLabel();  
     public final JLabel bodyHraca2 = new JLabel();
     private Skore skore;
+    
+    private final Hrac []hraci;
 
 
-    public Panel(Postava postava1, Postava postava2) {
-        skore = new Skore(postava1, postava2);
+    public Panel(Hrac []paHraci) {
+        this.hraci = paHraci;
+        skore = new Skore(hraci);
         vrchnyPanel = new JPanel(new GridBagLayout());
         vrchnyPanel.setLayout(new GridLayout(1, 2, 100, 40));
         vrchnyPanel.add(lavyHrac);
@@ -35,11 +38,11 @@ public class Panel extends JFrame {
         vrchnyPanel.add(pravyHrac);
 
         
-        menoHraca1.setText("hrač 1:" + postava1.getMeno());
-        menoHraca2.setText("hrač 2:" + postava2.getMeno());
+        menoHraca1.setText("hrač 1:" + hraci[0].getMeno());
+        menoHraca2.setText("hrač 2:" + hraci[1].getMeno());
         
-        bodyHraca1.setText("body" + postava1.getBody());
-        bodyHraca2.setText("body" + postava2.getBody());
+        bodyHraca1.setText("body" + hraci[0].getBody());
+        bodyHraca2.setText("body" + hraci[1].getBody());
         stred.setText("!");
        
 
@@ -61,7 +64,7 @@ public class Panel extends JFrame {
     }
     
 //zmení body vo vrchnom paneli hráčom
-    public void zmenBody(Postava postava, int hracNaRade) {
+    public void zmenBody(Hrac postava, int hracNaRade) {
         if (hracNaRade == 1) {
             bodyHraca1.setText("body : " + postava.getBody());
         } else {
@@ -69,9 +72,9 @@ public class Panel extends JFrame {
         }
     }
 
-    public void vyherca(Postava postava1, Postava postava2) {
+    public void vyherca(Hrac postava1, Hrac postava2) {
         JFrame jframe2 = new JFrame("Ukončenie hry");
-    skore = new Skore(postava1, postava2);
+        skore = new Skore(hraci);
     }
 
 }
