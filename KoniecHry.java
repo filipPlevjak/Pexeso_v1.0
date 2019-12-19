@@ -1,20 +1,21 @@
 package hraciaPlocha;
  
 public class KoniecHry extends javax.swing.JFrame {
- private String meno;
- private int body;
+    
+    private final String meno;
+    private final int body;
+    
     public KoniecHry(String paMeno, int paBody) {
         this.meno = paMeno;
         this.body = paBody;
+        jLabel3.setText(this.meno + " s " + this.body + " bodmi");
         this.initComponents();
-   jLabel3.setText(this.meno + " s " + this.body + " bodmi");
-   
     }
     
    
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -70,16 +71,16 @@ public class KoniecHry extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
