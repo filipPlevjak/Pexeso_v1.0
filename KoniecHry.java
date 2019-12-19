@@ -1,14 +1,14 @@
 package hraciaPlocha;
  
+import hra.Hrac;
+
 public class KoniecHry extends javax.swing.JFrame {
     
-    private final String meno;
-    private final int body;
+    private final Hrac []hraci;
     
-    public KoniecHry(String paMeno, int paBody) {
-        this.meno = paMeno;
-        this.body = paBody;
-        jLabel3.setText(this.meno + " s " + this.body + " bodmi");
+    public KoniecHry(Hrac []paHraci) {
+        this.hraci = paHraci;
+        jLabel3.setText(hraci[0].getMeno() + " s " + hraci[1].getBody() + " bodmi");
         this.initComponents();
     }
     
@@ -84,3 +84,4 @@ public class KoniecHry extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration                   
 }
+
