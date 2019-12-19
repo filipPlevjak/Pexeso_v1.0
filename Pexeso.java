@@ -182,9 +182,9 @@ public class Pexeso extends JFrame implements ActionListener {
         if (pocetUhadnutych == POCET_PAROV_PEXESA) {
             
             if(hraci[0].getBody() >  hraci[1].getBody()){
-                koniec = new KoniecHry(hraci[0].getMeno(),hraci[0].getBody());
+                koniec = new KoniecHry(hraci);
             } else{
-                koniec = new KoniecHry(hraci[1].getMeno(),hraci[1].getBody());
+                koniec = new KoniecHry(hraci);
             }   
             koniec.setVisible(true);
        }
